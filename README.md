@@ -6,7 +6,7 @@
 
 gitbookで作成しましたが,数式に対して自動で番号を付ける機能をつけることができなかったので,解決方法をご存知の方がいれば是非共有をお願いします.
 
-※元ファイル(`.md`)が欲しい人は[GitHubページ](https://github.com/akirat1993/MathPC)から`git clone`してみてください.
+※元ファイル(`.md`)が欲しい人は共有用の[GitHubページ](https://github.com/akirat1993/MathPCsrc)から`clone`してください.
 
 # 変更履歴(History)
 
