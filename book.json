@@ -1,0 +1,37 @@
+{
+  "plugins": [
+    "mathjax-commonhtml",
+    "-lunr", "-search", "search-pro-kui",
+    "page-toc",
+    "git-author",
+    "expandable-chapters",
+    "navigator",
+    "copy-code-button",
+    "-shareing"
+  ],
+  "pluginsConfig": {
+    "page-toc": {
+      "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5",
+      "position": "top",
+      "showByDefault": true
+    },
+    "git-author":{
+      "position": "bottom",
+      "modifyTpl": "Last modified by {user} {timeStamp}",
+      "createTpl": "Created by {user} {timeStamp}",
+      "timeStampFormat": "YYYY-MM-DD HH:mm:ss"
+    },
+    "sharing":{
+      "facebook": true,
+      "twitter": true,
+      "google": false,
+      "weibo": false,
+      "instapaper": false,
+      "vk": false,
+      "all": [
+        "facebook", "google", "twitter",
+        "weibo", "instapaper"
+      ]
+    }
+  }
+}

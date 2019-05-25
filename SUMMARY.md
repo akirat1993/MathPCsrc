@@ -1,0 +1,46 @@
+# Summary
+
+* [README](README.md)
+* [自己紹介](SelfIntro.md)
+* [このページの作り方](./md/gitbook.md)
+* [数学](./md/math/MathSum.md)
+	* [濃度](./md/math/set.md)
+	* [重み付き並び替え](./md/math/WRS.md)
+	* [楕円体](./md/math/GEO_lat.md)
+	* [一様収束](./md/math/calculus_compl.md)
+	* [ネットワークフロー](./md/math/graph_theory.md)
+	* [最小費用流](./md/math/MCF.md)
+	* [異常検知と変化検知](./md/math/異常検知と変化検知.md)
+	* [機械学習による異常検知](./md/math/機械学習による異常検知.md)
+	* [ベイジアンネットワーク](./md/math/PGM_TB01.md)
+	* [スパースモデリング](./md/math/sparse.md)
+	* [スペクトラルクラスタリング](./md/math/spectral.md)
+	* 位相空間
+		* [Topology without Tears](./md/math/TopologyWithoutTears.md)
+	* [測度論1](./md/math/measure_and_probability_theory1.md)
+	* [測度論2](./md/math/measure_and_probability_theory2.md)
+	* その他
+		* [半正定値行列に誘導される距離](./md/math/SDP_Metric.md)
+		* [予備知識無し問題](./md/math/数学問題.md)
+* 深層学習
+	* [論文](./md/DL/DLpaper.md)
+	* [全般メモ](./md/DL/DL_Sum.md)
+	* [VAE](./md/DL/VAE.md)
+	* [物体追跡](./md/DL/MOT.md)
+	* [pytorch](./md/DL/pytorch.md)
+* ツール
+	* [neovim](./md/tool/neovim.md)
+	* [typora](./md/tool/typora.md)
+	* [tmux](./md/tool/tmux.md)
+	* [atom](./md/tool/atom.md)
+* プログラム
+	* python3
+		* [メモ](./md/program/python3.md)
+		* [pyenv](./md/program/pyenv.md)
+		* [plotly](./md/program/plotly.md)
+		* [jupyter](./md/program/jupyter.md)
+		* [gurobi](./md/program/gurobi.md)
+* Linux
+	* [便利コマンド](./md/Linux.md)
+* Mac
+	* [mdfind](./md/mdfind.md)
