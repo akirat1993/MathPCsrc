@@ -5,8 +5,15 @@
 * [このページの作り方](./md/gitbook.md)
 * [数学](./md/math/MathSum.md)
 	* [濃度](./md/math/set.md)
+	* 線形代数
+		[コレスキー分解](./md/math/choleskey.md)
 	* [重み付き並び替え](./md/math/WRS.md)
-	* [楕円体](./md/math/GEO_lat.md)
+	* [群/アフィン/ベクトル](./md/math/group.md)
+	* 幾何学
+		* [楕円体](./md/math/GEO_lat.md)
+		* [図形全般](./md/math/geom.md)
+	* 代数
+		* [2項関係/順序](./md/math/relation_order.md)
 	* [一様収束](./md/math/calculus_compl.md)
 	* [ネットワークフロー](./md/math/graph_theory.md)
 	* [最小費用流](./md/math/MCF.md)
@@ -17,9 +24,11 @@
 	* [スペクトラルクラスタリング](./md/math/spectral.md)
 	* 位相空間
 		* [Topology without Tears](./md/math/TopologyWithoutTears.md)
+		* [ノルム](./md/math/norm.md)
 	* [測度論1](./md/math/measure_and_probability_theory1.md)
 	* [測度論2](./md/math/measure_and_probability_theory2.md)
 	* その他
+		* [マップマッチング補足](./md/math/Frechet.md)
 		* [半正定値行列に誘導される距離](./md/math/SDP_Metric.md)
 		* [予備知識無し問題](./md/math/数学問題.md)
 * 深層学習

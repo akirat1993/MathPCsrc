@@ -16,12 +16,23 @@
 
 [分野別・最新論文のまとめ](https://paperswithcode.com/sota)
 
+[Computer ScienceのTop Conference](http://www.guide2research.com/topconf/)
+
+[分野別・最新論文のまとめ](https://paperswithcode.com/sota)
+
 ### チェックしたまとめサイト
 
 * CVPR2018
   * [CVPR 2018速報](https://www.slideshare.net/cvpaperchallenge/cvpr-2018-102878612)
     深層学習会の動向について詳しい(p64まで流し読み)
   * CVPR 2018に採択された全979論文のサマリ(未読)[AIが作成](https://drive.google.com/open?id=1xJy-MRn9QGWo4rnYm1Mv49jxwdKrwz31),[人間作成](https://github.com/cvpaperchallenge/CVPR2018_Survey)
+
+* 2019
+  - [ICLR2019ポスター発表一覧(今後確認)](ICLR2019のポスター発表一覧
+    https://postersession.ai/?utm_campaign=NLP%20News&utm_medium=email&utm_source=Revue%20newsletter)
+  - [CVPR2019の採択論文一覧(今後確認)](http://openaccess.thecvf.com/CVPR2019.py)
+
+
 
 ### 論文
 
@@ -145,22 +156,62 @@
 
   * 応用例
     
+
   [MRI画像から肝臓領域の抽出 & U-Netの簡単な説明](https://lp-tech.net/articles/5MIeh)
-    
+
     [手書き文字のスキャン時に生じたぼやけ・かすれなどのノイズ除去](https://confit.atlas.jp/guide/event-img/jsai2018/4M1-01/public/pdf?type=in)
-    
+
     [細胞のセグメンテーション](https://blog.negativemind.com/2019/03/15/semantic-segmentation-by-u-net/)
-    
+
     [自動歌声分離](https://qiita.com/xiao_ming/items/88826e576b87141c4909)
 
 - [Capsule Network (CapsNet)](https://qiita.com/motokimura/items/cae9defed10cb5efeb62)というNN(特にCNN)の強化版(ニューロンがベクトル)のようなものがあって、PyTorchで実装・およびMNISTで検証した記事がありました
 
 - [Non-local Neural Networks](https://arxiv.org/abs/1711.07971)
   
+
 CNNやRNNは局所的な特徴抽出をするため,画像全体やシーケンス全体の特徴も扱えるようにする手法.全結合層との違いは線形和の重みの部分が類似度になっていること.導入することで動画像の分類や物体検出,領域分割において性能が向上した.[要約記事](https://uiiurz1.hatenablog.com/entry/2018/12/30/152038)
+
+
+
+#### GCN
+
+- AAAI2019でのGCNに関するtutorialのスライド
+
+  [Introduction](https://jian-tang.com/files/AAAI19/aaai-grltutorial-part0-intro.pdf)
+
+  [Node representation](https://jian-tang.com/files/AAAI19/aaai-grltutorial-part1-nodereps.pdf)
+
+  [GNNs](https://jian-tang.com/files/AAAI19/aaai-grltutorial-part2-gnns.pdf)
+
+  [Generative models](https://jian-tang.com/files/AAAI19/aaai-grltutorial-part3-generation.pdf)
+
+
+
+#### ゼロショット学習(Zero-shot_Learning)
+
+- Survey
+
+  A Survey of Zero-Shot Learning: Settings, Methods and Applications, 2019
+
+
+
+#### アクティブラーニング(Active_Learning)
+
+- Survey
+
+  Active Learning Literature Survey,  Burr Settles, 2010
+
+  
 
 #### 学習時の工夫
 
 * [PackNet CVPR2018](https://arxiv.org/abs/1711.05769)
   
   1つのNNで複数のタスクを学習.畳み込みと全結合層の小さい重みを削除→残りを再訓練して固定.削除した重みを次タスクの学習に利用.単純で強力.pytorch実装あり.
+
+
+
+#### その他
+
+* [カメラ画像をインプットとして別角度からの見え方を生成する研究です動画がイメージ掴みやすいです](https://deepmind.com/blog/neural-scene-representation-and-rendering/)

@@ -10,6 +10,7 @@
 
 ## 代数
 
+* [2項関係,順序](./relation_order.md)
 * 体上の多項式に関する除法定理(Remainder Theorem)
 * [複素数係数の多項式の因数分解](http://www.ms.u-tokyo.ac.jp/activity/documents/tsuji.pdf#search=)
 * [多項式の積の可換(associativity) 証明](https://math.stackexchange.com/questions/77671/how-to-show-associativity-of-multiplication-of-polynomials-in-rx-where-r)
@@ -75,9 +76,16 @@
   
     位相空間の学び直しに使用したネットに落ちてる教科書.説明が凄く丁寧なので初学者にもオススメ.事前知識は集合論のみ必要.実数の構成とか濃度の概念とか知ってるとつまずくところはないかも.
 
+* [位相空間の定理の補足](topology.md)
+
+    * 定理:ハウスドルフ空間上のコンパクト集合は閉集合
+
 * [線形位相空間(Topological Vector Space)](http://www.ma.huji.ac.il/~razk/iWeb/My_Site/Teaching_files/TVS.pdf)←まあまあ良かった英語の教科書.
+
 * ノルム空間
     * [有限次元ノルム空間の任意のノルムは同値(p26 A.5)](http://www.ma.noda.tus.ac.jp/u/sh/pdfdvi/13fa-s.pdf)
+    * [ノルム全般](norm.md)
+        * 定理:ノルムが定まっている有限次元ベクトル空間はR^nと位相同型
     * [有限次元線形写像の連続性](https://ja.wikipedia.org/wiki/%E4%B8%8D%E9%80%A3%E7%B6%9A%E7%B7%9A%E5%9E%8B%E5%86%99%E5%83%8F)
     * [Subset of finite dimensional norm equal to 1 is compact](https://math.stackexchange.com/questions/895142/proof-of-compactness-for-sets-of-norm-equal-to-one-in-finite-dimensional-normed)
     * [Matrix Norm についての資料 少し良い](https://www.uio.no/studier/emner/matnat/ifi/nedlagte-emner/INF-MAT4350/h08/undervisningsmateriale/chap13slides.pdf)
@@ -122,6 +130,8 @@
     * [行列式(det)は連続関数であることの証明(英語)](https://math.stackexchange.com/questions/1314411/proof-that-determinant-is-continuous-using-epsilon-delta-definition)
     
     * [半正定値行列の同値条件(対称行列,エルミート行列)](https://risalc.info/src/positive-semi-definite-properties.html)
+    
+    * [コレスキー分解](choleskey.md)
     
 * 行列  
     * [特異値分解(singular value decomposition) 未読](https://wiki.math.ntnu.no/_media/tma4205/2017h/svd.pdf )
@@ -174,6 +184,11 @@
 
 ## 凸関数
 
+* [凸関数全般](./convex.md)
+
+  * 定義:凸集合,凸関数
+  * 定理:R上の任意のノルムは凸関数
+
 * [First and second order characterization(下記の証明)](http://www.princeton.edu/~amirali/Public/Teaching/ORF523/S16/ORF523_S16_Lec7_gh.pdf)
 
   $$f(y) \ge f(x) + \nabla ^T f(x) (y-x), \nabla^2 f(x) \ge 0$$ 
@@ -190,12 +205,16 @@
 
 ## 幾何学
 
+* [図形全般](./geom.md)
+  * 平行多面体,楕円,アフィン変換による像
 * [楕円の離心率・法線ベクトル・パラメータ表示](./GEO_lat.md)
 
 
 
 ## その他
 
-[異常検知と変化検知(井出剛 杉山将)](./異常検知と変化検知.md)
+* [異常検知と変化検知(井出剛 杉山将)](./異常検知と変化検知.md)
 
-[入門 機械学習による異常検知 Rによる実践ガイド(井手剛)](機械学習による異常検知.md)
+* [入門 機械学習による異常検知 Rによる実践ガイド(井手剛)](機械学習による異常検知.md)
+
+* [マップマッチング補足](Frechet.md)
