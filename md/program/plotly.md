@@ -1,5 +1,76 @@
-[plotlyって何?](https://qiita.com/inoory/items/12028af62018bf367722)
-あとは自分メモ
+[TOC]
+
+
+
+plotlyって何?](https://qiita.com/inoory/items/12028af62018bf367722)
+
+## 描写例
+
+### Stacked and Gouped Barplots
+
+``` python
+import plotly.graph_objs as go
+import plotly
+
+abc1 = go.Bar(
+    x =["A", "B", "C"],
+    y = [0, 0.35, 0.4],
+    name = "abc1",
+    xaxis = 'x1',
+)
+
+abc2 = go.Bar(
+    x =["A", "B", "C"],
+    y = [0.6, 0.5, 0.4],
+    name = "abc2",
+    xaxis = 'x1',
+)
+
+de1 = go.Bar(
+    x =["D", "E"],
+    y = [0.3, 0.35],
+    name = "de1",
+    xaxis = 'x2',
+)
+
+de2 = go.Bar(
+    x =["D", "E"],
+    y = [0.25, 0.15],
+    name = "de2",
+    xaxis = 'x2',
+)
+layout = go.Layout(
+    barmode = "stack",
+    #yaxis = dict(tickformat: '%'),
+    xaxis = {
+        "domain": [0, 0.5],
+        "anchor": 'x1', 
+        "title": 'ABC'
+    },
+    xaxis2 = {
+        "domain": [0.5, 1],
+        "anchor": 'x2', 
+        "title": 'DE'
+    }
+)
+fig = go.Figure(data=[abc1, abc2, de1, de2], layout=layout)
+
+#plotlyをjupyter内部で表示
+plotly.offline.init_notebook_mode(connected=False)
+
+#draw
+plotly.offline.iplot(
+    fig, show_link=False, 
+    # Hide botton to update figure to plotly 
+    config={"displaylogo":False, "modeBarButtonsToRemove":["sendDataToCloud"]}
+) 
+```
+
+!INCLUDE "../../html/StackGroupBars.html"
+
+
+
+## 自分メモ
 
 
 ```python

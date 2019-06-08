@@ -69,7 +69,8 @@
     "git-author",←編集日時をつける
     "copy-code-button",←コードにコピーボタンをつける
   	"-shareing",←SNSのシェアボタン
-  	"embed-pdf"←pdfの埋め込み
+  	"embed-pdf",←pdfの埋め込み
+		"include-html",←htmlの埋め込み
  	],
   "pluginsConfig": {
     "page-toc": {
