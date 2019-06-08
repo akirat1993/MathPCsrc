@@ -1,6 +1,24 @@
 [TOC]
 
 ##Command 
+### 7z
+
+* 概要
+
+  高い圧縮率
+
+* インストール
+
+  `brew install p7zip`
+
+* 使用方法:
+
+  解凍:`7z x 2017男性.7z`
+
+* 参考資料
+
+  [7z Macでの使い方](https://qiita.com/ntkgcj/items/afe4863c40680d72a755)
+
 ### ssh
 
 * オプション 

@@ -1,5 +1,105 @@
 [TOC]
 
+## 知ってると得(ビギナー向け)
+
+- DaataLoader引数
+
+  - `drop_last`(Trueの場合,残りデータ数がbatch_size未満になると次のepochに移る)
+
+  - `num_workers`(cpuを何個使ってデータをimportするのか)
+
+  - `pin_memory`(Trueの場合はgpuにメモリを載せるらしいので高速化される?)
+
+    
+
+- `model.eval()`と`torch.no_grad()`について
+
+  デフォルトではforward計算時に勾配計算用のパラメータを保存しておくことでbackward計算の高速化を行なっている.`model.eval()`を行っても**勾配計算用のパラメータは保存される**のでテスト時には`torch.no_grad()`も必要となる.ちなみに`model.eval()`を行うとdropoutを無効にできる.[参考文献](https://qiita.com/a_yoshii/items/598365cf3b68955e11c5)
+
+  具体的には以下のようにすればOK.
+
+  ```python
+  model = #torch.nnで定義されたネットワークとする
+  #訓練の場合
+  model.train();torch.set_grad_enabled(True)
+  for batch in dataloader:
+    ....
+  #テストの場合
+  model.eval();torch.set_grad_enabled(False)
+  for batch in dataloader:
+    ....
+  ```
+
+  
+
+- 複数gpuの使い方
+
+  ```python
+  gpus = (0,) #使用するgpu番号のtuple(複数選択可)
+  
+  model = #ネットワークをtorch.nnで定義
+  #必要であれば学習済み重みをロード
+  
+  #deviceの設定
+  device = torch.device(f"cuda:{min(gpus)}" if len(gpus) > 0 else 'cpu')
+  
+  if len(gpus) <= 1:
+    model = model.to(device)
+  else:
+    model = torch.nn.DataParallel(model, gpus).cuda()
+  #...
+  Loss = # Loss関数をtorch.nnなどで定義
+  for batch in dataloader:
+    inp, label = batch
+    inp = inp.to(device); label = label.to(device)
+    out = model(inp)
+    loss = Loss(inp, out)
+    #inp,label, outは今GPU上に載っているのでcpuに乗せたいときは
+    #inp = inp.cpu()とかすれば良い.inp = inp.detach().cpu()とかする必要がある場合もある
+  ```
+
+
+
+## プログラムの書き方
+
+* dataloaderは自分で作成しよう(気が向いたら簡潔な具体例を共有)
+* 損失関数は自作してメイン関数を綺麗にしよう
+
+``` python
+#0.1が境界線の重み付きhuber lossを計算するloss関数
+class MyHuber(nn.Module):
+    def __init__(self, huber = -1):
+        '''
+        huber (int)
+            -1->No Huber
+            0->Continuous Huber
+            1->Not Continuous Huber
+        '''
+        super(MyHuber, self).__init__()
+        self.huber = huber
+            
+    def forward(self, out, tgt, coeff = 1.0):
+        '''
+        Args:
+            out/tgt/coeff
+                [batch, qnrs]
+        '''
+        loss = torch.abs(out - tgt) #asb
+        if self.huber in {-1,0,1}:
+            if self.huber == 0:
+                loss = torch.where(loss >= 0.1, loss - 0.09, loss**2) #huber
+            elif self.huber == 1:
+                loss = torch.where(loss >= 0.1, loss, loss**2) #huber
+        loss = coeff*loss #huber*coeff
+        return torch.mean(loss)
+```
+
+
+
+
+
+## 全般
+
 ### 画像変換
 
 ```python

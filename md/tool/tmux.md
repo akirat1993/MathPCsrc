@@ -58,14 +58,18 @@ export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
   PROMPT_COMMAND='share_history'
   ```
 
+### 基本操作
 
-### Windowに関するコマンド
+<left><img src="../../img/tmux_pane.png" width="400px" /></left>
 
-| window位置の交換 | `swap-window -s window1 -t window2` |
+#### Windowに関するコマンド
+
+|                  | コマンド                            |
 | ---------------- | ----------------------------------- |
-|                  |                                     |
+| window位置の交換 | `swap-window -s window1 -t window2` |
+| window番号を変更 | `.`                                 |
 
-### ペイン操作
+#### ペイン操作
 
 | ペインの分割(横/縦)                                          | `"`/`%`               |
 | ------------------------------------------------------------ | --------------------- |
@@ -77,11 +81,13 @@ export LD_LIBRARY_PATH=${HOME}/local/lib:$LD_LIBRARY_PATH
 | ウインドウ名を変更                                           | Prefix+.              |
 |                                                              |                       |
 
-### マニアックコマンド
+#### マニアックコマンド
 
 | [tmuxのコマンド一覧表示 英語](https://gist.github.com/kennyng/816c29eb75e8eb022108) | `$tmux list-commands`                                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | optionの値を確認                                             | globalの履歴の保存行数(history-limit)<br />`show-options -g history-limit` |
+
+
 
 ## 設定ファイル
 
