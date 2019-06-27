@@ -1,7 +1,5 @@
 [TOC]
 
-
-
 ### Def(field)
 
 > A *field* is a set $$F$$ together with two operations
@@ -46,6 +44,47 @@
 > $$a \cdot 0 = 0,-a = (-1)  \cdot a \quad \forall a \in A$$
 >
 > $$ab=0 \Rightarrow a = 0 \lor b = 0 \quad \forall a, b \in A$$
+
+
+
+### Def(absolute_value)
+
+> A real-valued function $$v$$ on a field $$F$$ is called an **absolute value** if it satisfied the following four axioms.
+>
+> * Non-negativity
+>
+>   $$v(a) \ge 0$$
+>
+> * Positive-definiteness
+>
+>   $$v(a) = 0 \Leftrightarrow a = \boldsymbol{0}$$
+>
+> * Multiplicativity
+>
+>   $$v(ab) = v(a) v(b)$$
+>
+> * Subadditivity or the triangle inequality
+>
+>   $$v(a+b) \le v(a) + v(b)$$
+>
+> Where $$\boldsymbol{0}$$ donotes the additive identity element of $$F$$.
+>
+> * It follows from positive-definiteness and multiplicativity that $$v(\boldsymbol{1}) = 1$$, where $$\boldsymbol{1}$$ denotes the multiplicative identity element of $$F$$(証明略).
+> * $$v(-a) = v(a)$$ for every $$a \in F$$(下記に証明)
+>
+> If $$v$$ is an absolute value on $$F$$, then the function $$d$$ on $$F \times F$$, defined by $$d(a,b) \equiv v(a -b)$$, is a metric(証明略). 
+
+$$v(-a) = v(a)$$ for every $$a \in F$$であることを示す.
+
+$$1 = v(\boldsymbol{1}) = v(-\boldsymbol{1} \cdot -\boldsymbol{1}) = v(-\boldsymbol{1}) v(-\boldsymbol{1})$$
+
+であるので,$$v(-\boldsymbol{1}) = 1$$であることに注意すると,任意の$$a \in F$$に対して$$v(-a) = v(-\boldsymbol{1} \cdot a) = v(-\boldsymbol{1}) v(a) = v(a)$$
+
+
+
+### Def(valued_field)
+
+> $$(K, | \cdot |)$$ is called a **valued field** if $$K$$ is a field and $$| \cdot |: K \to \mathbb{R}$$ is an absolute value.
 
 
 
@@ -115,6 +154,57 @@
 
 
 
+### Def(codimension)
+
+> If $$W$$ is a linear subspace of a finite-dimensional vector space $$V$$, then the codimension of $$W$$ in $$V$$ is the difference between the dimensions:
+>
+> $$\text{codim}(W) = \dim (V) - \dim(W)$$
+
+
+
+### Def(maximal_proper_subspace)
+
+> A (proper) *linear subspace* is said to be **maximal proper subspace** if its any proper superset is (original) *linear space*.
+>
+> * The dimension of maximal proper subspace of $$n$$-dimensional linear space is $$n-1$$.(証明略)
+> * A linear subspace $$W$$ of finite-dimensional vector space $$V$$ is maximal proper subspace if and only if the codimension of $$W$$ is one.
+
+(2つ目のProof)
+
+$$W$$のcodimensionが1である時にmaximal proper subspaceであることを証明する.
+
+$$W$$の基底を$$e_1,\dots e_{n-1}$$と表すことにする.$$W$$を真に含む任意のlinear subspace$$M$$は$$W$$に含まれていない元を少なくとも1つは含んでいるのでそれを$$e_n$$とする.この時$$e_1, \dots ,e_n$$は一次独立である(背理法で示せる)であるので元の線形空間$$V$$の基底である.また$$M$$はlinear subspaceであるので$$e_1, \dots ,e_n$$ によって張られる空間を$$M$$は含んでおり,$$e_1, \dots e_n$$は$$V$$の基底であったので,$$M = V$$である.ゆえに$$W$$はmaximal proper subspaceである.
+
+
+
+### Def(affine_manifold/hyperplane)
+
+> A subset of $$S$$ of a *linear space* $$V$$ is an **affine manifold** of $$V$$ if $$S = Z + x^*$$ for some linear subspace $$Z$$ of $$V$$ and some $$x^* \in V$$. If $$Z$$ is a maximal proper subspace of $$V$$ then we call $$S$$ a **hyperplane**.
+
+
+
+> A set $$S \subset \mathbb{R}^n$$ is a *hyperplane* if and only if $$S = \{ x \in \mathbb{R}^n \mid \langle a, x \rangle = b \}$$ for some $$a \in \mathbb{R}^n \setminus \{ \boldsymbol{0} \}, b \in \mathbb{R}$$  
+
+(Proof)
+
+$$S$$がhyperplaneと仮定するとmaximal proper subspaceである$$Z$$とベクトル$$x^*$$が存在して, $$S = Z + x^*$$が成立する.$$Z$$はmaximal proper subspaceであるので$$Z$$は$$n-1$$次元であるので,[部分空間は斉次方程式の解空間](./linalg.md#部分空間は斉次方程式の解空間)を用いる事で$$ a \in \mathbb{R}^n \setminus \{ \boldsymbol{0} \}$$が存在して,$$Z = \{ x \in \mathbb{R}^n \mid \langle a, x \rangle = 0 \}$$と表す事ができる.$$x \in Z$$に対して,
+$$
+\langle a, x + x^* \rangle
+= \langle a, x\rangle + \langle a, x^*\rangle
+= \langle a, x^*\rangle
+$$
+であるので,$$b \equiv \langle a, x^*\rangle$$と定義すると$$S = \{ x \in \mathbb{R}^n \mid \langle a, x \rangle = b \}$$ となる.
+
+逆に,$$a \in \mathbb{R}^n \setminus \{ \boldsymbol{0} \}, b \in \mathbb{R}$$  が存在して $$S = \{ x \in \mathbb{R}^n \mid \langle a, x \rangle = b \}$$を満たすとする.
+
+$$Z \equiv \{ x \in \mathbb{R}^n \mid \langle a, x \rangle = 0 \}, W = \langle a \rangle$$ ($$a$$によって張られる空間)と定義すると$$Z = W^{\bot}$$である.$$\mathbb{R}^n = W \oplus W^{\bot}$$であるのでcodimenson of $$Z$$は１である.よって[maximal proper subsetの定義](#Def(maximal_proper_subspace))より$$Z$$はmaximal proper subspaceである(subspaceであることは容易に示せる).
+
+よって,$$\langle a, x^*\rangle = b$$を満たす$$x^*$$を1つ固定すると $$S = Z + x^*$$となる.
+
+
+
+
+
 ### Def(span)
 
 > Let $$S$$ be a noempty subset of a vector space $$V$$. The *span* of $$S$$, denoted by $$\text{span}(S)$$, is the set containing of all linear combinations of vectors in $$S$$. For convenience, we definie $$\text{span}(\emptyset) = \{0\}$$.
@@ -122,8 +212,6 @@
 (Ex1) Let $$S=\{v_i\}_{i=1}^k \subset V$$, where $$k \in \mathbb{N}_{>0}$$.Then $$\text{span}(S)$$ is also subspace of $$V$$.
 
 [部分空間の同値性](#Def(Linear_subspace))を使えば(Ex1)は容易に示せる.
-
-
 
 
 

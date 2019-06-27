@@ -2,7 +2,7 @@
 
 
 
-plotlyって何?](https://qiita.com/inoory/items/12028af62018bf367722)
+[plotlyって何?](https://qiita.com/inoory/items/12028af62018bf367722)
 
 ## 描写例
 

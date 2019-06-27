@@ -6,6 +6,7 @@
 * [数学](./md/math/MathSum.md)
 	* [濃度](./md/math/set.md)
 	* 線形代数
+		[線形代数](./md/math/linalg.md)
 		[コレスキー分解](./md/math/choleskey.md)
 	* [重み付き並び替え](./md/math/WRS.md)
 	* [群/アフィン/ベクトル](./md/math/group.md)
@@ -24,7 +25,10 @@
 	* [スペクトラルクラスタリング](./md/math/spectral.md)
 	* 位相空間
 		* [Topology without Tears](./md/math/TopologyWithoutTears.md)
-		* [ノルム](./md/math/norm.md)
+		* [位相全般](./md/math/topology.md)
+		* [距離空間](./md/math/metric.md)
+		* [ノルム空間](./md/math/norm.md)
+	* [凸関数](./md/math/convex.md)
 	* [測度論1](./md/math/measure_and_probability_theory1.md)
 	* [測度論2](./md/math/measure_and_probability_theory2.md)
 	* その他
@@ -53,3 +57,5 @@
 	* [便利コマンド](./md/Linux.md)
 * Mac
 	* [mdfind](./md/mdfind.md)
+* Workshop
+	* [190610Nvidia](./md/workshop/190610NvidiaWKSH.md)

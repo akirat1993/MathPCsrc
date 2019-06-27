@@ -83,6 +83,8 @@
 
 ### 基本的な設定
 
+#### 一般設定
+
 1. 拡張機能でpythonを使うものがあるので`pip`でインストールしておく
 
    `pip install neovim`
@@ -99,6 +101,45 @@
    set foldmethod=indent "(インデントで折りたたみを自動作成してくれる) 2018/11/13
    set smartindent "前の行のインデントを継承してくれる 2018/11/14
    ```
+
+#### カラースキーム(colorshcme)設定
+
+dein.vimを用いたcolorschemeの設定方法
+
+1. colorshemeのpluginをインストール
+
+   `~/.config/nvim/dein.toml`に以下を追加
+
+   ```toml
+   #色指定
+   [[plugins]]
+   repo = 'NLKNguyen/papercolor-theme'
+   ```
+
+2. 設定ファイル` ~/.config/nvim/init.vim`に以下を記述
+
+   ``` bash
+   ...
+   "dein.tomlに記載したカラースキームをインストール
+   if dein#check_install()
+   	call dein#install()
+   endif
+   "-----------------------------
+   "カラースキームの設定
+   "-----------------------------
+   "set termguicolors     ←(必要な場合がある)enable true colors support
+   "let ayucolor="light"  ←カラースキームの設定
+   set t_Co=256 "←(必要な場合がある)
+   set background=light "基本lightかdark
+   "colorscheme ayu
+   colorscheme PaperColor "←カラースキームの設定
+   syntax on              " ←コイツをかいとく
+   
+   ```
+
+   
+
+   
 
 ### dein.vim(パッケージ管理ツール)を用いたプラグイン設定
 
@@ -255,7 +296,8 @@
    
    "カラースキームを使えるように変更
    "http://www.maruc.net/2016/07/11/dein-vimのcolorscheme/
-   colorscheme Apprentice     " ←コイツと
+   "colorscheme Apprentice     " ←コイツと
+   colorscheme PaperColor "←カラースキームの設定
    syntax on              " ←コイツをかいとく
    
    "----------------------------------
@@ -268,8 +310,6 @@
    set cursorcolumn       "列のハイライト 2018/11/14
    set foldmethod=indent "(インデントで折りたたみを自動作成してくれる) 2018/11/14
    set smartindent "前の行のインデントを継承してくれる 2018/11/14
-   
-   colorscheme apprentice "colorscheme 2018/11/14
    ```
 
 
@@ -282,20 +322,41 @@
 
 [参考資料](https://qiita.com/okamos/items/4e1665ecd416ef77df7c),[ソース 英語](https://github.com/Shougo/denite.nvim/blob/master/doc/denite.txt)
 
-| 用法                                     | コマンド                |
-| ---------------------------------------- | ----------------------- |
-| カレントディレクトリを表示/再帰的に表示  | `:Denite file/file_rec` |
-| 前回のdeniteバッファを再表示             | `:Denite -resume`       |
-| 最近使ったファイルを表示                 | `:Denite file_mru`      |
-| 前回のdeniteバッファを再表示             | `:Denite neoyank`       |
-| Deniteのbufferを閉じる                   | `<C-c>`                 |
-| ノーマルモードに切り替え                 | `<C-o>`                 |
-| 挿入モードに切り替え                     | `i`                     |
-| アクションを選択(アクションを選択します) | `<Tab>`                 |
-| 親ディレクトリに移動(ノーマルモード)     | `U`                     |
-| パスを指定                               | `P`                     |
-| 次の行に移動(insertモード)               | `<C-g>`                 |
-| 前の行に移動(insertモード)               | `<C-t>`                 |
+| 用法                                     | コマンド           |
+| ---------------------------------------- | ------------------ |
+| 前回のdeniteバッファを再表示             | `:Denite -resume`  |
+| 最近使ったファイルを表示                 | `:Denite file_mru` |
+| 前回のdeniteバッファを再表示             | `:Denite neoyank`  |
+| Deniteのbufferを閉じる                   | `<C-c>`            |
+| 挿入モードに切り替え                     | `i`                |
+| アクションを選択(アクションを選択します) | `<Tab>`            |
+| 親ディレクトリに移動(ノーマルモード)     | `U`                |
+| 次の行に移動(insertモード)               | `<C-g>`            |
+| 前の行に移動(insertモード)               | `<C-t>`            |
+
+##### 全般
+
+| 用法                                         | コマンド                |
+| -------------------------------------------- | ----------------------- |
+| カレントディレクトリを表示/再帰的に表示      | `:Denite file/file_rec` |
+| 現在開いているバッファのディレクトリでDenite | `:DeniteBufferDir`      |
+
+
+
+##### インサートモード
+
+| 用法                     | コマンド      |
+| ------------------------ | ------------- |
+| 上/下に移動              | `<C-t>/<C-g>` |
+| ノーマルモードに切り替え | `<C-o>`       |
+
+
+
+##### ノーマルモード
+
+| 用法       | コマンド |
+| ---------- | -------- |
+| パスを指定 | `P`      |
 
 
 
@@ -352,6 +413,7 @@
 | 置換(範囲指定後)                                             | `'<,'>s/置換文字/置換後文字/オプション`<br />オプション:g->マッチした全ての文字を置換,c->マッチするたびに |
 | 置換行数指定                                                 | `開始行,終了行s/置換文字/置換後文字/オプション`              |
 | 検索文字列を置換                                             | `/`で文字列を検索した後で<br />`%s//<replace word>/cg`       |
+| 縦分割から横分割                                             | `⌥-w t`,`⌥-w K`                                              |
 
 #### コードの折りたたみ
 

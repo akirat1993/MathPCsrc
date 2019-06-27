@@ -2,7 +2,7 @@
 
 ## 便利機能
 
-* youtubeの動画をjupyter上に貼り付けるls
+* youtubeの動画をjupyter上に貼り付ける
 
 ``` python
 from IPython.display import YouTubeVideo
@@ -113,7 +113,29 @@ background-color: #000000 !important;
 ```
 
 
+
+##### 出力結果(エラー文を含む)が見切れる場合
+
+`~/.jupyter/custom/custom.css`の以下を追記及び編集
+
+```css
+div.output_subarea.output_text.output_stream.output_stdout,
+div.output_subarea.output_text {
+  font-family: "Roboto Mono", monospace, monospace;
+  ...
+  margin-left: 11.5px;←ここを編集
+}
+div.output_subarea {
+  overflow-x: auto;
+  padding: 1.1em !important;←ここを編集
+  ...
+}
+```
+
+:
+
 #### おすすめ拡張機能
+
 | name | Expalain |
 |:----|:-----|
 |[Table of Contents(2)](http://cartman0.hatenablog.com/entry/2016/03/28/170319#Equation-Auto-Numbering)| 目次を作成作成.反映されない場合は[以下](https://qiita.com/masaru/items/fb2b8ea221278f22c259)を参照 |

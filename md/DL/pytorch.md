@@ -60,6 +60,84 @@
 
 
 
+## 画像処理
+
+#### RGB(0~1)の平均・標準偏差を求める
+
+```python
+'''
+複数画像のR,G,Bの平均と標準偏差を求める
+(手順:RGB値を0~1に正規化→平均・標準偏差を求める)
+
+Args:
+    imgpaths:画像のファイルパスのリスト
+'''
+from PIL import Image
+import torchvision.transforms as transforms
+import torch
+
+def RGB_01_mean_std(imgpaths):
+  ToTensor = transforms.ToTensor()
+  #[n,C,H,W]
+  tensors = list()
+  for imgpath in imgpaths:
+    img = Image.open(imgpath)
+    #PIL->[C][H][W] = 0~1
+    tensor = ToTensor(img)
+    tensors.append(tensor)
+  tensors = torch.stack(tensors)
+  mean = tensors.mean(dim=(0,2,3))
+  mean = list(mean.numpy())
+  std = tensors.std(dim=(0,2,3))
+  std = list(std.numpy())
+  return mean, std
+ 
+#平均画像を描写して確認(jupyterの場合)
+import numpy as np
+
+mean, std = RGB_01_mean_std(imgpaths)
+H = W = 50; C = 3
+#[H][W][C]
+RGBarr = np.zeros((H,W,C))
+for h in range(H):
+    for w in range(W):
+        for c in range(C):
+            RGBarr[h][w][c] = mean[c]
+RGBarr = RGBarr.astype(np.uint8)
+img = Image.fromarray(RGBarr)
+img
+```
+
+
+
+#### transformsを描写(jupyterを想定)
+
+```python
+from PIL import Image
+import matplotlib.pyplot as plt
+import torchvision.transforms as transforms
+
+img = Image.open(imgpath)
+transform = [
+    transforms.ColorJitter(brightness=0.15,contrast=0.2)
+]
+transform = transforms.Compose(transform)
+t_img = transform(img)
+
+imgs = [img, t_img]
+plt.figure(figsize=(5,10))
+columns = 2
+for i, img in enumerate(imgs):
+    plt.subplot(len(imgs) / columns + 1, columns, i + 1)
+    plt.axis('off')
+    plt.imshow(img)
+#左に元画像, 右に変換した画像が描写される
+```
+
+
+
+
+
 ## プログラムの書き方
 
 * dataloaderは自分で作成しよう(気が向いたら簡潔な具体例を共有)
@@ -109,6 +187,13 @@ transforms.ToTensor()
 	PIL画像→[C][H][W] = 0~1(float32)に変換する
 	白黒画像の場合はC=1,RGB画像の場合はC=3となっている
 '''
+mean = [0.485, 0.456, 0.406];std=[0.229, 0.224, 0.225]
+transform = transforms.Compose([
+    transforms.ColorJitter(brightness=0.1,contrast=0.1),
+    transforms.Resize((224,224)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=mean, std=std)
+    ])
 ```
 
 

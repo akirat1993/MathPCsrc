@@ -68,9 +68,9 @@
     "navigator",←ページの目次を常に右に表示(イカリのアイコン)
     "git-author",←編集日時をつける
     "copy-code-button",←コードにコピーボタンをつける
-  	"-shareing",←SNSのシェアボタン
-  	"embed-pdf",←pdfの埋め込み
-		"include-html",←htmlの埋め込み
+    "-shareing",←SNSのシェアボタン
+    "embed-pdf",←pdfの埋め込み
+    "include-html",←htmlの埋め込み
  	],
   "pluginsConfig": {
     "page-toc": {
@@ -117,21 +117,48 @@ GitBookをブラウザで表示させるための方法.
 
 GitHubのprivateリポジトリでgitbookを共有して各自がlocalでブラウザに表示させることを想定.
 
-##### GitBook環境設定(Mac)
+##### GitBook環境設定(Mac/Windows)
 
-1. [Node.jsをインストール](https://qiita.com/kyosuke5_20/items/c5f68fc9d89b84c0df09)
+1. Node.jsをインストール(v4.0.0以上)
 
-   GitBookを使うのに必要なNode.jsをインストールします.手順は上記サイトを参考にしてください.
+   GitBookを使うのに必要なNode.jsをインストールします.手順は下記を参考にしてください.
 
-2. Gitbookが使ってるnpmを初期化(要らないかも)
+   * Macの場合は
+
+     [こちらの手順に従ってください](https://qiita.com/kyosuke5_20/items/c5f68fc9d89b84c0df09)
+
+   * Windowsの場合
+
+     [公式ページ](https://nodejs.org/en/)からLTS版をインストール
+
+2. Node.jsの動作とバージョン確認
+
+   ```bash
+   $node -v
+   >v10.16.0
+   ```
+
+   versionが4.0.0以上ならOK
+
+   versionが4.0.0より小さい場合は古いバージョンをアンインストールして再度インストール
+
+   * Node.jsのアンインストール方法(windows)
+
+     * インストローラーを使用した場合は[こちら](https://qiita.com/akifuyuro/items/d381f3cae832cb2c2d53)のサイトを参照
+
+     * 上記で削除されない場合は[こちら](https://stackoverflow.com/questions/20711240/how-to-completely-remove-node-js-from-windows)を参考(アクセス権限がないフォルダを削除する際には管理者権限でコマンドプロンプトを立ち上げて削除)
+
+       ※直接実行ファイルや関連ファイルを削除する方法
+
+3. Gitbookが使ってるnpmを初期化(普通は要らないと思うので,これ無しで上手くいかない場合のみ実行して下さい)
 
    `$npm init`
 
-3. Gitbookをインストール
+4. Gitbookをインストール
 
    `$npm install -g gitbook-cli`
 
-[参考資料](https://qiita.com/kannkyo/items/7ad6a7ebaf8622e4d8d6)
+[gitbook setup 公式](https://github.com/GitbookIO/gitbook/blob/master/docs/setup.md)
 
 
 
@@ -141,7 +168,7 @@ GitHubのprivateリポジトリでgitbookを共有して各自がlocalでブラ�
 
    アカウントを持ってない場合は上記を参考にしてアカウント作成してください
 
-   ※学生だとprivateリポジトリで多人数の共同編集が可能なProが無料で使えたと記憶してるので,登録後に学生登録することを推奨します.ちなみに無料プランだとprivateリポジトリで3人のみ共同編集可能
+   ※学生だとprivateリポジトリで多人数の共同編集が可能なProが無料で使えたと記憶してるので,登録後に学生登録することを推奨します.ちなみに無料プランだとprivateリポジトリで3人のみ共同編集可能.
 
 2. GitHubアカウントをリポジトリの所有者に教える
 
@@ -167,11 +194,11 @@ GitHubのprivateリポジトリでgitbookを共有して各自がlocalでブラ�
 
       `$cd /path/to/directory`
 
-   2. ファイルの自動更新
+   2. 最新ファイルの取得
 
       `$git pull`
 
-   3. (初回もしくは新しい拡張機能が必要の時のみ必要)
+   3. (初回もしくは新しい拡張機能を追加した時のみ必要)
 
       Gitbook作成元ファイルがある`src`に移動
 
@@ -183,7 +210,7 @@ GitHubのprivateリポジトリでgitbookを共有して各自がlocalでブラ�
 
       `$gitbook install`
 
-      →`node_modules`というディレクトリが作成できていればOK
+      →`node_modules`というディレクトリが作成されてその中にpluginがインストールされる
 
    5. `src`があるディレクトリに移動
 
@@ -197,7 +224,11 @@ GitHubのprivateリポジトリでgitbookを共有して各自がlocalでブラ�
 
       と表示されるのでSafariやChoromeなど適当なブラウザを開いてURLに`http://localhost:4000`をコピペしてエンターキーを押す.
 
+      ※閉じたい場合はコントロールキーを押しながらCを押すなどして実行を中断させれば良い.
+
       ※コマンドは`gitbook serve [book] [output]`であり,`[book]`は`SUMMARY.md`が存在するディレクトリ,`[output]`は出力先を表す
+
+      ※`Error: ENOENT: no such file or directory, stat '/Users/../fontsettings.js`というエラーが発生する場合は[ここ](#no_such_file_or_directory)を参照
 
 
 

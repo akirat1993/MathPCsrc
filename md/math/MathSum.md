@@ -76,20 +76,29 @@
   
     位相空間の学び直しに使用したネットに落ちてる教科書.説明が凄く丁寧なので初学者にもオススメ.事前知識は集合論のみ必要.実数の構成とか濃度の概念とか知ってるとつまずくところはないかも.
 
-* [位相空間の定理の補足](topology.md)
+* [位相空間の定理の補足](./topology.md)
 
     * 定理:ハウスドルフ空間上のコンパクト集合は閉集合
 
 * [線形位相空間(Topological Vector Space)](http://www.ma.huji.ac.il/~razk/iWeb/My_Site/Teaching_files/TVS.pdf)←まあまあ良かった英語の教科書.
 
 * ノルム空間
-    * [有限次元ノルム空間の任意のノルムは同値(p26 A.5)](http://www.ma.noda.tus.ac.jp/u/sh/pdfdvi/13fa-s.pdf)
-    * [ノルム全般](norm.md)
+    * [有限次元ノルム空間の任意のノルムは同値(p24 A.5)](http://www.ma.noda.tus.ac.jp/u/sh/pdfdvi/13fa-s.pdf)
+    
+        [保存用p24 A5](https://www.slideshare.net/secret/bwAxb39joMUra5)
+    
+    * [ノルム全般](./norm.md)
+      
         * 定理:ノルムが定まっている有限次元ベクトル空間はR^nと位相同型
+        
     * [有限次元線形写像の連続性](https://ja.wikipedia.org/wiki/%E4%B8%8D%E9%80%A3%E7%B6%9A%E7%B7%9A%E5%9E%8B%E5%86%99%E5%83%8F)
+    
     * [Subset of finite dimensional norm equal to 1 is compact](https://math.stackexchange.com/questions/895142/proof-of-compactness-for-sets-of-norm-equal-to-one-in-finite-dimensional-normed)
+    
     * [Matrix Norm についての資料 少し良い](https://www.uio.no/studier/emner/matnat/ifi/nedlagte-emner/INF-MAT4350/h08/undervisningsmateriale/chap13slides.pdf)
+    
     * [Calculation of operator norm when p = 2](https://math.stackexchange.com/questions/1877202/why-is-the-operator-norm-so-hard-to-calculate)
+    
     * $$L_p$$ノルム空間
         * $$0 < p < 1$$のとき,$$\sum_{i=1}^n \| x_i - y_i \|^p$$は距離を定める.
             * $$(a+b)^p \le a^p + b^p$$の[証明(今は権限が必要みたいで閲覧不可)](https://matthewhr.files.wordpress.com/2012/09/lp-spaces-for-p-in-01.pdf)
@@ -188,15 +197,12 @@
 
   * 定義:凸集合,凸関数
   * 定理:R上の任意のノルムは凸関数
+  * 凸関数の勾配の単調性$$ \langle \nabla f(x) - \nabla f(y), x - y \rangle \ge 0$$
 
 * [First and second order characterization(下記の証明)](http://www.princeton.edu/~amirali/Public/Teaching/ORF523/S16/ORF523_S16_Lec7_gh.pdf)
 
   $$f(y) \ge f(x) + \nabla ^T f(x) (y-x), \nabla^2 f(x) \ge 0$$ 
 
-* Monotonity of $$\nabla f(x)$$ [Proof](https://www.math.cuhk.edu.hk/course_builder/1617/math6211a/cvxop.pdf) 
-  
-  $$\langle \nabla f(x) - \nabla f(y),  x - y  \rangle \ge 0$$
-  
 * [停留点が最小値の証明(stationary point is a global minimum)](https://people.seas.harvard.edu/~yaron/AM221-S16/lecture_notes/AM221_lecture8.pdf)
 
 * [二階微分が半正定値ならば凸関数の証明(second derivative is nonnegative everywhere implies convex)](http://math.ucr.edu/~res/math133/convex-functions.pdf)

@@ -38,8 +38,13 @@
 ### 査読付き論文
 
 * Nozomi Hata, Takashi Nakayama, Akira Tanaka, Takashi Wakamatsu, Akihiro Yoshida, Nariaki Tateiwa, Yuri Nishikawa, Jun Ozawa, and Katsuki Fujisawa. Mobility Optimization on Cyber Physical System via Multiple Object Tracking and Mathematical Programming, the Fifth International Workshop on High Performance Big Graph Data Management, Analysis, and Mining (BigGraphs 2018), to be held in conjunction with the 2018 IEEE International Conference on Big Data (IEEE BigData 2018), in Seattle, WA, USA, 2018(共著)
+
 * Katsuki Fujisawa, Toyotaro Suzumura, Hitoshi Sato, Koji Ueno, Satoshi Imamura, Ryo Mizote, Akira Tanaka, Nozomi Hata, Toshio Endo, Advanced Computing and Optimization Infrastructure for Extremely Large-Scale Graphs on Post-peta-scale Supercomputers, Advanced Software Technologies for Post-Peta Scale Computing, Springer, 2018, DOI:https://doi.org/10.1007/978-981-13-1924-2_11(共著)
+
+  [ホームページ](https://link.springer.com/chapter/10.1007/978-981-13-1924-2_11)
+
 * Nariaki Tateiwa, Nozomi Hata, Akira Tanaka, Akihiro Yoshida, Takashi Wakamatsu,Takashi Nakayama, Katsuki Fujisawa. Hybrid Vehicle Control and Optimization with a New Mathematical Method, The 5th IFAC Conference on Engine and Powertrain Control, Simulation and Modeling, in Changchun, China, 2018(共著)
+
 * Akira Tanaka, Nozomi Hata, Nariaki Tateiwa, Katsuki Fujisawa. Practical Approach to Evacuation Planning Via Network Flow and Deep Learning, the Fourth Interna- tional Workshop on High Performance Big Graph Data Management, Analysis, and Mining (BigGraphs 2017), to be held in conjunction with the 2017 IEEE International Conference on Big Data (IEEE BigData 2017), in Boston, MA, USA, 2017(主著)[paper](https://biggraphs.org/workshop2017.html) [pptx](https://www.slideshare.net/secret/DttCSitV44tFXf)
 
 
