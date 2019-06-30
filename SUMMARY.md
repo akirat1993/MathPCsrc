@@ -18,9 +18,11 @@
 	* [一様収束](./md/math/calculus_compl.md)
 	* [ネットワークフロー](./md/math/graph_theory.md)
 	* [最小費用流](./md/math/MCF.md)
-	* [異常検知と変化検知](./md/math/異常検知と変化検知.md)
-	* [機械学習による異常検知](./md/math/機械学習による異常検知.md)
-	* [ベイジアンネットワーク](./md/math/PGM_TB01.md)
+	* 確率
+		* [異常検知と変化検知](./md/math/異常検知と変化検知.md)
+		* [ベイジアンネットワーク](./md/math/PGM_TB01.md)
+		* [カルバック情報量](./md/math/kl.md)
+		* [変分ベイズ](./md/math/VB.md)
 	* [スパースモデリング](./md/math/sparse.md)
 	* [スペクトラルクラスタリング](./md/math/spectral.md)
 	* 位相空間
@@ -38,7 +40,6 @@
 * 深層学習
 	* [論文](./md/DL/DLpaper.md)
 	* [全般メモ](./md/DL/DL_Sum.md)
-	* [VAE](./md/DL/VAE.md)
 	* [物体追跡](./md/DL/MOT.md)
 	* [pytorch](./md/DL/pytorch.md)
 * ツール

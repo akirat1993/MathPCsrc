@@ -64,7 +64,7 @@
 3. Maximum Classifier Discrepancy for Unsupervised Domain Adaptation (MCD)
 
 * Adversarial Discriminative Domain Adaptation (ADDA)
-  $p(z | x_s) = p(z | x_t)$になるように学習する
+  $$p(z | x_s) = p(z | x_t)$$になるように学習する
   * 手順:
     * Pre-training:ソースの画像とラベルを用いてSourceCNNとClassifierを学習
     * Adversarial Adaptation:学習済SourceCNNのパラメータで初期化したTargetCNNを用いてターゲット画像から特徴抽出を行う.どちらのドメインから特徴がやってきたかを識別するDiscriminatorを配置し,Adversarial Learningを行うことでTargetCNNとSourceCNNの出力分布を近づける
@@ -89,14 +89,38 @@
 * 論文
   * [Anomaly Detection using One-Class Neural Networks](https://arxiv.org/abs/1802.06360)
     教師無し異常検知手法.One Class SVMをニューラルネットに発展させた手法.SVMのパラメータと深層学習のパラメータを交互に学習?[日本語解説](https://www.smartbowwow.com/2018/12/anomaly-detection-using-one-class.html)
+    
   * [GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training (ACCV 2018)](https://arxiv.org/abs/1805.06725)
     * 疑問
       adversarial lossの部分は機能してる?
     * 説明資料
       [AnoGAN, Efficient-GAN-Anomalyの違いあり](https://qiita.com/masataka46/items/a905465f2a93c90f62ea)
+    
   * [EFFICIENT GAN-BASED ANOMALY DETECTION(Efficient GAN/EGBAD), ICLR(2018)](https://arxiv.org/pdf/1802.06222.pdf)
     * 説明資料
       [日本語資料](https://qiita.com/masataka46/items/49dba2790fa59c29126b)
+    
+  * [非正則化異常度を用いた工業製品の異常検知](https://confit.atlas.jp/guide/event-img/jsai2018/2A1-03/public/pdf?type=in)
+  
+    製品の部分毎の複雑さに頑強な異常度を定義している.[詳細はこちら](https://akirat1993.github.io/MathPC/md/math/VB.html)
+  
+  * [Improving Unsupervised Defect Segmentation by Applying Structual Similarity To Autoencoders](https://arxiv.org/pdf/1807.02011.pdf)
+  
+    2018年6月:arXiv初版,2019年2月:arXivでv3で引用数2(2019/06/30時点)内容は重そうだが,結果の図を見ると異常個所のsegmentationが出来ている印象がある.
+  
+  * [Generative Outliers Detector Network](https://github.com/JGuymont/vae-anomaly-detector/blob/master/docs/report/report.pdf)
+  
+    2019/1/12に書かれたspam文章をVAEの枠組みで検知する手法.内容は易しそう.
+  
+  * [Truncated Gaussian-Mixture Variational AutoEncoder](https://arxiv.org/abs/1902.03717)
+  
+    2019/2/11:arXiv初版.潜在空間に混合ガウス分布を仮定しているらしい.熟読対象.
+  
+  * [VA based Anomaly Detection using Reconstruction Probability](https://pdfs.semanticscholar.org/0611/46b1d7938d7a8dae70e3531a00fceb3c78e8.pdf)
+  
+    2015年に書かれたものだが,引用数が104にもなっているのでチェック
+  
+  
 
 #### Attention
 

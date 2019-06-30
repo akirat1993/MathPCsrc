@@ -8,32 +8,38 @@
 
 
 
-## 定義及び定理
+## 定義
 
-### Def(Convex_set)
+### 凸集合
 
+> 凸集合(convex set)
+>
 > Let $$S$$ be a vector space over the some *orderded field*. A set $$C$$ in $$S$$ is said to be **convex** if $$ (1-t)x + ty \in C \quad \forall x,y \in C, \forall t \in (0,1)$$
 
 
 
-### Def(convex_function)
+### 凸関数
 
+> 凸関数(convex function)
+>
 > Let $$X$$ be a *convex set* in a real vector space and let $$f:X \to \mathbb{R}$$ be a function.
 >
 > * $$f$$ is called **convex** if $$\forall x_1, x_2  \in X, \forall t \in [0,1]$$:
 >
->   $$f(tx_1 + (1-t)x_2) \le t f(x_1) + (1-t) f(x_2)$$
+> $$f(tx_1 + (1-t)x_2) \le t f(x_1) + (1-t) f(x_2)$$
 >
 > * $$f$$ is called **strictly convex** if $$\forall x_1 \ne x_2 \in X, \forall t \in (0,1)$$:
 >
->   $$f(tx_1 + (1-t)x_2) < t f(x_1) + (1-t) f(x_2)$$
+> $$f(tx_1 + (1-t)x_2) < t f(x_1) + (1-t) f(x_2)$$
 >
 > * A function $$f$$ is said to be (strictly) **concave** if $$-f$$ is (strictly) convex.
 
 
 
-### Def(エピグラフ:Epigraph)
+### エピグラフ
 
+> エピグラフ(epigraph)
+>
 > Let $$X \subset \mathbb{R}^n$$ be a convex set. 
 >
 > **Epigraph** or **supergraph** of a function $$f:X \to \mathbb{R}$$ is the set of points lying on or above its graph definied as
@@ -45,6 +51,16 @@
 > A function is convex(strictly convex) if and only if its epigraph is a (strictly) convex set.
 
 
+
+### ヒルベルト空間
+
+> ヒルベルト空間(Hilbert space)
+>
+> A **Hilbert space** $$(H, \langle \cdot \rangle)$$ is a real or complex inner product space that is also a complete metric space.
+
+
+
+## 定理
 
 ### 凸関数の勾配の単調性
 
@@ -66,7 +82,24 @@ $$
 
 [Proof Theorem5](http://math.ucr.edu/~res/math133/convex-functions.pdf),[保存用](https://www.slideshare.net/secret/NP7RGRYEJimsKV)
 
+### 凸関数の接線
 
+> Suppose $$f:\mathbb{R}^n \to \mathbb{R}$$ be total differentiable convex function over an convex open domain. Then, the following are equivalent
+>
+> 1. $$f$$ is convex.
+> 2. $$f(y) \ge f(x) + \nabla f(x)^T (y - x) \quad \forall x,y \in \text{dom}(f)$$
+
+[pdf5 Theorem2](https://www.slideshare.net/secret/yMIv6mKVrNkPeq)
+
+### 凸関数の同値条件
+
+> Suppose $$f:\mathbb{R}^n \to \mathbb{R}$$ be class $$C^2$$ convex function over an convex open domain. Then, the following are equivalent
+>
+> 1. $$f$$ is convex.
+> 2. $$f(y) \ge f(x) + \nabla f(x)^T (y - x) \quad \forall x,y \in \text{dom}(f)$$
+> 3. $$\nabla^2 f(x) \succ 0 \quad \forall x \in \text{dom}(f)$$
+
+[pdf5 Theorem2](https://www.slideshare.net/secret/yMIv6mKVrNkPeq)が証明(3)$$\Rightarrow$$(1)の証明は[こちらを](#凸関数の２階導関数テスト)を参照
 
 ### R上の任意のノルムは凸関数である
 
@@ -80,14 +113,6 @@ $$
 \le \lambda\|v\| + (1-\lambda) \|w\|
 $$
 
-
-
-### Def(ヒルベルト空間)
-
-> A **Hilbert space** $$(H, \langle \cdot \rangle)$$ is a real or complex inner product space that is also a complete metric space.
-
-
-
 ### 中線定理
 
 > Let $$\mathcal{H}$$ be a Hilbert space. Then, for any $$x,y \in H$$, we have 
@@ -96,7 +121,7 @@ $$
 >
 > parallelogram identity
 
-
+定義通り計算すれば示せるので略
 
 ### 凸射影定理
 
@@ -136,8 +161,6 @@ $$
 \end{align*}
 $$
 となるので,ノルムの定義より$$k = \ell$$.
-
-
 
 ### 凸射影の幾何学的性質
 
@@ -189,7 +212,7 @@ $$
 
 
 
-### 分離超平面定理(supporting_hyperplane)
+### 分離超平面定理supporting_hyperplane
 
 > Let $$(H, \langle \cdot \rangle)$$ be a finite-deimensional Hilber space over a field $$\mathbb{R}$$ ,and $$C \subset H$$ be a *noempty convex* set.
 >
@@ -233,7 +256,7 @@ This sequence is bounded and, therefore there exists a subsequence of $$\{a_{\el
 
 ---
 
-Since $$z_k^*$$ is the projection of $$x_k$$, by the [Projection Theorem](#凸射影の幾何学的性質), for every $$z \in C, k \in \mathbb{N}_{>0}$$,
+Since $$z_k^*$$ is the projection of $$x_k$$, by the [Property of Projection Theorem](#凸射影の幾何学的性質), for every $$z \in C, k \in \mathbb{N}_{>0}$$,
 $$
 \begin{align*}
 	(z_k^* - x_k)^T (z - z_k^*) \ge 0
@@ -271,11 +294,19 @@ $$f$$の連続性は$$| \langle c , x \rangle - \langle c , y \rangle|= | \langl
 
 
 
-### イェンセンの不等式(期待値)
+### イェンセンの不等式Jensen's_inequality
 
 > $$X$$を確率変数として,$$h(x)$$を$$X$$の値域を含む区間上で凸な関数とする.$$X$$と$$h(x)$$の期待値が有限のとき,$$E[h(X)] \ge h (E[X])$$が成立する.もし,$$h(x)$$が狭義の凸関数のとき,等号が成立するのは1点分布の時に限る.
 
-$$X$$の値域を$$\text{Im}(X)$$で表すと,仮定より区間$$I \supset \text{Im}(X)$$が存在し,$$h$$は$$I$$上で凸関数である.よって区間$$I$$に制限した$$h$$のエピグラフ
+問題文より,$$X$$の値域を$$\text{Im}(X)$$で表すと,仮定より区間$$I \supset \text{Im}(X)$$が存在し,$$h$$は$$I$$上で凸関数である.
+
+---
+
+この証明においては,任意の$$x_0 \in I$$に対して,$$h(x_0) = g(x_0)$$と$$g(x) \le h(x)$$を満たす$$g(x) = cx +d$$を作成することが肝である.$$h$$が微分可能であれば,$$g(x) \equiv \nabla h(x_0)(x - x_0) + h(x_0)$$と定義することで,[凸関数の接線の性質](#凸関数の接線)より,$$h(x_0) = g(x_0)$$と$$g(x) \le h(x)$$を満たす.以下では,$$h$$が微分出来ない場合にも対応できる証明になっているが,このような$$g(x)$$を認めた上で簡単な証明なら[こちらの定理1.11](https://mcm-www.jwu.ac.jp/~konno/pdf/statg-1-8r.pdf), [リンク切れ用](https://www.slideshare.net/secret/gc9pRvF96F7JN)を参照
+
+---
+
+よって区間$$I$$に制限した$$h$$のエピグラフ
 $$
 \text{epi}\; \left.h\right|_{I} 
 \equiv \{ (x, t) \in \mathbb{R}^2 \mid x \in I, h(x) \le t \}
@@ -290,7 +321,7 @@ $$
 
 ---
 
-よって,[分離超平面定理より](#分離超平面定理(supporting_hyperplane)),$$a = (a_1, a_2)^T \ne (0,0) \in \mathbb{R}^2$$が存在し,任意の$$(x, t)$$ with $$ x \in I, t \ge h(x_0)$$に対して,
+よって,[分離超平面定理](#分離超平面定理supporting_hyperplane)より,$$a = (a_1, a_2)^T \ne (0,0) \in \mathbb{R}^2$$が存在し,任意の$$(x, t)$$ with $$ x \in I, t \ge h(x_0)$$に対して,
 $$
 \begin{align*}
 	\langle a, (x, t) \rangle \le \langle a, (x_0, h(x_0)) \rangle
@@ -322,7 +353,7 @@ $$
 	&= g(x_2)
 \end{align*}
 $$
-より矛盾.ゆえに問題文の等号成立は1点分布の場合に限る.[参考資料](http://mcm-www.jwu.ac.jp/~konno/pdf/statg-1-8r.pdf)
+より矛盾.ゆえに問題文の等号成立は1点分布の場合に限る.
 
 ## Backup
 
@@ -333,4 +364,3 @@ $$
 > There exists unique $$c \in C$$ such that $$ \| x - c \| \le \|x - a\| (\forall x \in V)$$
 
 $$C$$は空集合でないので,元$$c \in C$$が取れるので1つ固定する.$$S \equiv \{ x \in C \mid \|a - x \| \le \| a - c \| \}$$を定義すると,$$S$$の任意の元$$x$$に対して,$$\| x\|\le \| x - a \| + \|a\| \le \|a-c \| + \| a \|$$となるので$$S$$は有界である.また,$$f:V \to\mathbb{R}; x \mapsto \| a - x \|$$と定義すると$$f$$は連続関数であり$$D \equiv f^{-1}([0, a-c])$$と定義すると$$S = D \cap C$$となる.$$[0, a- c]$$は閉集合で$$f$$が連続写像であるので$$D$$も閉集合である.よって,$$S$$は閉集合である.また,$$S$$は有界であったので,$$S$$は有界閉集合である.よって,体$$K$$の[条件より](#完備全有界な体におけるコンパクトと有界閉集合の同値性)$$S$$はコンパクト.また定義域を$$S$$に制限した写像$$f$$を考えると,$$f$$は全射になるので$$f(S)$$はコンパクトであるので有界閉集合.$$S$$の定義より,$$d(a, C) = \inf f(S)$$であるので$$d(a, C) = \inf f(S) = \min f(S)$$.よって,$$c \in C$$で$$d(a, C) = \| a - c \|$$となるものが存在する.次に固有性を示す. $$c_1,c_2 \in C$$が$$d(a, C) = \| a - c_1 \| = \| a - c_2 \|$$を満たすとする.この時$$C$$がconvexであるので$$c = \frac{c_1 + c_2}{2} \in C$$である.よって,$$d(a, C) $$の定義より$$\|a-c_1\| \le \| a- c \|$$であるが,
-
