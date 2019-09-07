@@ -124,6 +124,16 @@
 		`%cd /path/to/symlink/directory`  
 		`% find ./`
 
+### tree
+
+ディレクトリを階層的に表示
+
+オプション`-N`:文字化け防止, `-L`:深さを指定, `-I directory`:表示させたくないディレクトリorファイル,`-d`:ディレクトリのみ表示
+
+(実行例)`tree -Nd -I 'Ras01|Ras04|Ras07'`
+
+
+
 ### find
 
 * share directory and file recursevely(no change on symbolic link)  
@@ -176,7 +186,10 @@ find /path/to/dir -type f -iname "*.sh" | xargs -I% chmod o=rwx %
     * file/directory  
     `-type f/d`
 
+
+
 ## コマンド逆引き
+
 ###Linuxでディレクトリ構造のみコピー   
 
 https://ex1.m-yabe.com/archives/2039

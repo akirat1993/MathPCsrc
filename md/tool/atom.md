@@ -4,7 +4,7 @@
 
 ## Latexの環境設定
 
-### インストール
+### Atomインストール
 
 この[サイト](https://qiita.com/kurohune538/items/6c1e48f6380b87fd8161)を見本
 
@@ -14,13 +14,14 @@
 
 `setting>install>search packages`
 
-| プラグイン名   | 概要                                               |
-| -------------- | -------------------------------------------------- |
-| latex          | latexのコンパイル                                  |
-| language-latex | latexの文章をハイライト                            |
-| script         | ショートカットキーでコードを実行(必要じゃないかも) |
-| pdf-view       | pdfを閲覧                                          |
-| latexer        | LaTexの文法,`\ref`,参考文献の補完                  |
+| プラグイン名            | 概要                                               |
+| ----------------------- | -------------------------------------------------- |
+| latex                   | latexのコンパイル                                  |
+| language-latex          | latexの文章をハイライト                            |
+| script                  | ショートカットキーでコードを実行(必要じゃないかも) |
+| pdf-view                | pdfを閲覧                                          |
+| latexer                 | LaTexの文法,`\ref`,参考文献の補完                  |
+| platformio-ide-terminal | terminal コマンドが打てる                          |
 
 
 

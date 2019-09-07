@@ -36,6 +36,30 @@
 
 ### 論文
 
+#### トラッキングtracking
+
+* 物体検知アルゴリズムM2Det
+  * [論文](https://arxiv.org/abs/1811.04533)
+  * [M2Det 日本語解説](https://qiita.com/kzykmyzw/items/1831f70dcade04db2210)
+
+* YOLO
+
+  高速/汎用(自然の画像を学習→アート作品でテスト)
+
+  * [YOLOを含む物体検知手法の潮流+損出関数 大雑把な解説](https://qiita.com/mdo4nt6n/items/68dcda71e90321574a2b)
+
+  * [YOLO 詳しい解説](https://blog.negativemind.com/2019/02/21/general-object-recognition-yolo/)
+
+  * [YOLOv3 解説記事](https://qiita.com/cyberailab/items/850806c08af08853bac8)
+
+    * [YOLOv3で採用されているFeature Pyramid Network](https://www.slideshare.net/ren4yu/single-shot)
+
+    * [YOLOv3損失関数](https://note.mu/seishin55/n/n141265f7fd5a)
+
+
+
+
+
 #### ドメイン適応 Domain Adaptation(DA)
 
 ##### 概要
@@ -81,6 +105,11 @@
     * [Sliced Wasserstein Discrepancy for Unsupervised Domain Adaptation](https://arxiv.org/pdf/1903.04064.pdf)
       Sliced Wasserstein Distanceを用いてより精度を向上させた論文(CVPR2019でAccept)
     * [DeepJDOT:Deep Joint Distribution Optimal Transport for Unsupervised Domain Adaptation](https://arxiv.org/pdf/1803.10081.pdf)(ECCV2018の論文)
+
+#### 画像生成
+
+* 論文
+  * [Inception VAEによるモノクロ画像の生成モデル](https://qiita.com/koshian2/items/e2d05d9151f5ae9deefb)
 
 #### 異常検知
 
@@ -236,6 +265,19 @@ CNNやRNNは局所的な特徴抽出をするため,画像全体やシーケン�
 
 
 
+#### 言語処理
+
+* 論文
+  * [汎用言語表現モデル](https://qiita.com/Kosuke-Szk/items/4b74b5cce84f423b7125)
+
+
+
 #### その他
 
-* [カメラ画像をインプットとして別角度からの見え方を生成する研究です動画がイメージ掴みやすいです](https://deepmind.com/blog/neural-scene-representation-and-rendering/)
+- [カメラ画像をインプットとして別角度からの見え方を生成する研究です動画がイメージ掴みやすいです](https://deepmind.com/blog/neural-scene-representation-and-rendering/)
+
+* Spanning tree
+* Grammarly
+
+
+

@@ -16,8 +16,10 @@
 	* 代数
 		* [2項関係/順序](./md/math/relation_order.md)
 	* [一様収束](./md/math/calculus_compl.md)
-	* [ネットワークフロー](./md/math/graph_theory.md)
-	* [最小費用流](./md/math/MCF.md)
+	* グラフ理論
+		* [ネットワークフロー](./md/math/graph_theory.md)
+		* [最小費用流](./md/math/MCF.md)
+		* [Hungarian](./md/math/hungarian/hungarian.md)
 	* 確率
 		* [異常検知と変化検知](./md/math/異常検知と変化検知.md)
 		* [ベイジアンネットワーク](./md/math/PGM_TB01.md)
@@ -31,6 +33,7 @@
 		* [距離空間](./md/math/metric.md)
 		* [ノルム空間](./md/math/norm.md)
 	* [凸関数](./md/math/convex.md)
+	* [最適化](./md/math/opt.md)
 	* [測度論1](./md/math/measure_and_probability_theory1.md)
 	* [測度論2](./md/math/measure_and_probability_theory2.md)
 	* その他
@@ -41,8 +44,10 @@
 	* [論文](./md/DL/DLpaper.md)
 	* [全般メモ](./md/DL/DL_Sum.md)
 	* [物体追跡](./md/DL/MOT.md)
+	* [追跡コード](./md/DL/TrackingCode.md)
 	* [pytorch](./md/DL/pytorch.md)
 * ツール
+	* [docker](./md/tool/docker.md)
 	* [neovim](./md/tool/neovim.md)
 	* [typora](./md/tool/typora.md)
 	* [tmux](./md/tool/tmux.md)
@@ -54,9 +59,12 @@
 		* [plotly](./md/program/plotly.md)
 		* [jupyter](./md/program/jupyter.md)
 		* [gurobi](./md/program/gurobi.md)
+	* [計算方法Tips](./md/program/computation.md)
 * Linux
 	* [便利コマンド](./md/Linux.md)
 * Mac
 	* [mdfind](./md/mdfind.md)
 * Workshop
 	* [190610Nvidia](./md/workshop/190610NvidiaWKSH.md)
+	* [Workshop Summary](./md/SumWorkshop.md)
+* [クイズ](./md/quiz.md)

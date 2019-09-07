@@ -8,6 +8,7 @@
     "navigator",
     "copy-code-button",
     "-shareing",
+	"embed-pdf",
     "include-html"
   ],
   "pluginsConfig": {

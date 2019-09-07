@@ -177,6 +177,92 @@ $$W$$の基底を$$e_1,\dots e_{n-1}$$と表すことにする.$$W$$を真に含
 
 
 
+### 内積空間inner_product_space
+
+> 内積空間(inner product space)
+>
+> An inner product space is a vector space $$V$$ over the fielf $$F$$ ($$\mathbb{R}$$ or $$\mathbb{C}$$) together with an inner product $$\langle \cdot , \cdot \rangle: V \times V \to F$$ that satisfies the following three properties for ll vectors $$x,y,z \in V$$ and all scholars $$a \in F$$.
+>
+> * Conjugate symmetry.
+>
+>   $$\langle x, y \rangle = \overline{\langle x, y \rangle}$$
+>
+> * Linearity in the first argument:
+>
+>   $$\langle a x, y \rangle = a \langle x, y \rangle$$
+>
+>   $$\langle x + y , z \rangle = \langle x ,z \rangle + \langle y, z \rangle$$
+>
+> * Positive definite:
+>
+>   $$\langle x, x \rangle > 0$$, $$x \in V \setminus \{ \mathbf{0} \}$$
+
+
+
+### 内積空間の連続性
+
+> Let $$(V, \langle \cdot , \cdot \rangle)$$ be an inner product space over a field $$\mathbb{R}$$ or $$\mathbb{C}$$ and $$a \in V$$.
+>
+> Then the function $$f: V \to K : x \mapsto \langle a,  x \rangle$$ is continuous.
+
+It is easy to prove by using Cauchy-Schwarz inequality, hence the proof is left to a reader.
+
+
+
+### 内積空間上の点と線分の距離
+
+> Let $$(V, \langle \cdot , \cdot \rangle)$$ be an inner product space over a field $$\mathbb{R}$$ or $$\mathbb{C}$$.
+>
+> Then we consider the distance between a point $$p \in V$$ and the segment $$a + t n$$ where $$a,n \in V$$ with $$\| n \| = 1$$ and $$t \in [c,d]$$.  
+
+最初に点$$p$$と直線上の点$$a + t n (t \in \mathbb{R})$$の距離を考える.
+$$
+\begin{align*}
+	\| a + t n - p\|^2
+	&= \langle tn + (a - p), tn + (a - p) \rangle\\
+	&= t^2 \| n \|^2 
+		+ t ( \langle n, a- p \rangle + \overline{ \langle n, a - p \rangle}) 
+		+ \| a - p \|^2
+\end{align*}
+$$
+よって,$$\langle n , a-p \rangle$$の実部を$$\alpha$$,$$\beta \equiv \| a - p \|^2 \ge 0$$と定義すると,
+$$
+\| a + t n - p\|^2
+	= t^2 + 2 \alpha t + \beta
+	= (t + \alpha)^2 + \beta - \alpha^2
+$$
+であるので,点$$p$$と最も距離が小さい直線上の点$$a_0$$は.
+$$
+a_0 
+= a - \alpha n = a - \frac{1}{2}( \langle n, a- p \rangle + \overline{ \langle n, a - p \rangle})n
+$$
+である.この時,
+$$
+\langle a_0 - p , n \rangle
+= \langle
+		(a - p) - \frac{1}{2} \langle n, a - p \rangle n
+			- \frac{1}{2}  \overline{ \langle n, a - p \rangle}n,
+		n\rangle
+= \frac{1}{2}(
+		\langle a - p , n \rangle - 
+		\overline{\langle a - p, n \rangle} 
+	)
+		
+$$
+となるので,$$V$$が$$\mathbb{R}$$上の内積空間ならベクトル$$a_0 - p$$と$$n$$は直行する.
+
+逆に直線上の点$$a_t \equiv a + tn$$とすると,
+$$
+\langle a_t - p, n \rangle 
+= \langle (a - p) + tn, n \rangle
+= \langle a -p , n \rangle + t
+$$
+であるので,ベクトル$$a_t - p$$と$$n$$が直交するとき,$$t = - \langle a - p , n \rangle$$である.
+
+よって,$$V$$が$$\mathbb{R}$$上の内積空間なら点$$p$$から線分に垂線の足が降ろせれば,垂線の足の距離が点と線分の距離$$\min_{t \in [c,d]}(\| a + t n - p\|)$$になり,下ろせなければ点$$p$$と線分の端点の距離の片方が点と線分の距離になる.
+
+
+
 ### Def(affine_manifold/hyperplane)
 
 > A subset of $$S$$ of a *linear space* $$V$$ is an **affine manifold** of $$V$$ if $$S = Z + x^*$$ for some linear subspace $$Z$$ of $$V$$ and some $$x^* \in V$$. If $$Z$$ is a maximal proper subspace of $$V$$ then we call $$S$$ a **hyperplane**.

@@ -1,4 +1,34 @@
+[TOC]
+
+## スクリプト
+
+###検知/追跡の描写スクリプト(自分メモ)
+
+* ディレクトリ
+
+  `ds:/data0/share/deep_learning/mk_movie`
+
+* サンプル動画
+
+  `sample.mp4`
+
+* 実行方法
+
+  `python mk_movie.py`>`det0.mp4`と`track0.mp4`が出力
+
+* 仕様
+
+  * 検知の場合:物体のクラスが異なれば異なる色
+  * 追跡の場合:IDが異なれば違う色
+
+* 詳細
+
+  `README.txt`を参照
+
+
+
 ## 論文
+
 ### MOT16入力形式
 det.txt
 
